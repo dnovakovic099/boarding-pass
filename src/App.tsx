@@ -24,7 +24,8 @@ function App() {
         if (!response.ok) {
           throw new Error("Failed to fetch reservation status");
         }
-        setReservationStatus(await response.text());
+        setReservationStatus('STARTEDD');
+        //TODO: remove this commnet setReservationStatus(await response.text());
       } catch (error: any) {
         console.error("Error fetching reservation status:", error.message);
       }
@@ -73,7 +74,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col font-customFont bg-black">
+    <div className="h-screen flex flex-col  bg-[#242424]">
       {isLoading ? <LoadingSpinner /> : renderPage()}
     </div>
   );

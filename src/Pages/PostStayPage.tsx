@@ -5,7 +5,7 @@ import StarIcon from "../icons/Star";
 const PostStayPage = (propertyInfo: any) => {
   const stars = Array(5).fill(<StarIcon />);
   return (
-    <div className="flex flex-col h-screen text-white">
+    <div className="flex  flex-col h-screen text-white">
       <HeroSection
         photoUrl={propertyInfo?.propertyInfo?.thumbnailUrl}
         propertyName={propertyInfo?.propertyInfo?.name}

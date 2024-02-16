@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.BtnCustomgfhghColors {
+    background: linear-gradient(267.27deg, #E6B32D -2.58%, #CA902A 8.74%, #C28E33 14.6%, #C09546 25.26%, #D7AF5B 36.98%, #E3C275 45.34%, #F2D89C 63.31%, #E3BF71 82.9%, #BA8C3F 100%);
+}
