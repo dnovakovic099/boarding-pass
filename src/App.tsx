@@ -25,7 +25,7 @@ function App() {
           throw new Error("Failed to fetch reservation status");
         }
         setReservationStatus('STARTEDD');
-        //TODO: remove this commnet setReservationStatus(await response.text());
+        setReservationStatus(await response.text());
       } catch (error: any) {
         console.error("Error fetching reservation status:", error.message);
       }
@@ -67,7 +67,7 @@ function App() {
       );
     } else if (reservationStatus === "FINISHED") {
       return (
-          //@ts-ignore
+        //@ts-ignore
         <PostStayPage propertyInfo={propertyInfo?.result}></PostStayPage>
       );
     }
