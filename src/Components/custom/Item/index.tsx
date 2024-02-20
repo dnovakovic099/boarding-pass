@@ -25,8 +25,8 @@ const Item = ({
         <div className="flex gap-[9px] justify-start items-start relative">
           <div className="rounded-md p-2 bg-[#414141] flex flex-col gap-[15px] justify-start items-start self-stretch relative w-[100%] h-full">
             <div className="flex gap-0 justify-between items-center self-stretch relative w-[100%] h-full">
-              <img src={item?.photo_url} alt="" className="h-8 w-8" />
-              <p className="font-medium leading-[19px] text-base text-[#a8abb3]">${item.item_price}</p>
+              <img src={item?.photo_url} alt="" className="h-5 w-5" />
+              <p className="text-sm leading-[19px]  text-[#a8abb3]">${item.item_price}</p>
             </div>
             <p className="font-medium leading-[19px] text-base text-white">
               {item.item_name}

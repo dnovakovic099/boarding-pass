@@ -135,31 +135,27 @@ function PreCheckInPage(propertyInfo: any) {
   return (
     <>
       <div className="flex flex-col text-white">
-
-        <div className="bg-[#242424] flex justify-center ">
-          <div className="justify-center items-center">
-            <div className="relative flex justify-center items-center w-full">
-              <img src={propertyInfo?.propertyInfo?.thumbnailUrl} alt="" className="object-contain w-full" />
+        <div className="bg-[#242424] flex justify-center  ">
+          <div className="justify-center items-center ">
+            <div className="relative flex justify-center items-center w-full ">
+              <img src={propertyInfo?.propertyInfo?.thumbnailUrl} alt="" className="object-contain w-full " />
               <button className="absolute top-2 left-2 text-white p-1 rounded" onClick={() => navigate(-1)}>
                 <img src={backarrow} alt='' />
               </button>
-            </div>
-
-            <div className="flex p-2 flex-col gap-2 justify-start items-start relative ">
-              <h4 className="flex leading-[29px] text-2xl text-white mx-3">
-                {propertyInfo?.propertyInfo?.name}
-              </h4>
-              <div className="flex flex-row text-white">
-                <LocationIcon width={30} height={30} />
-                {propertyInfo?.propertyInfo?.address}
+              <div className="absolute bottom-[-12px] px-4 py-5  imagebackground w-full">
+                <h4 className="text-white font-semibold text-2xl mt-20">  {propertyInfo?.propertyInfo?.name} </h4>
+                <p className="text-gray-200 flex flex-row">
+                  <LocationIcon width={30} height={30} />
+                  {propertyInfo?.propertyInfo?.address}
+                </p>
               </div>
             </div>
             <div className="bg-[#414141] w-[fit] justify-center items-center mx-5  h-px"></div>
 
-            <div className="flex justify-between  items-start relative mx-5 w-full mt-2">
+            <div className="flex justify-between  items-start relative mx-3 w-full mt-2">
               <div className="flex gap-2 justify-start items-center flex-1 relative w-full">
                 <div className="rounded p-2 bg-[#414141] flex gap-2.5 justify-start items-start relative">
-                  <PhoneIcon width={20} height={20} />
+                  <PhoneIcon width={30} height={30} />
                 </div>
                 <div className="flex flex-col gap-1 justify-start items-start flex-1 relative w-full">
                   <p className="max-w-[127px] leading-[14px] text-xs text-[#a8abb3]">
@@ -174,7 +170,7 @@ function PreCheckInPage(propertyInfo: any) {
               </div>
               <div className="flex gap-2 justify-start items-center flex-1 relative w-full">
                 <div className="rounded p-2 bg-[#414141] flex gap-2.5 justify-start items-start relative">
-                  <WifiIcon width={20} height={20} />
+                  <WifiIcon width={30} height={30} />
                 </div>
                 <div className="flex flex-col gap-1 justify-start items-start flex-1 relative w-full">
                   <p className="max-w-[127px] leading-[14px] text-xs text-[#a8abb3]"> {propertyInfo?.propertyInfo?.wifiUsername != null
@@ -189,6 +185,7 @@ function PreCheckInPage(propertyInfo: any) {
             <div className="flex justify-between  items-start relative mx-5 w-full mt-2">
               <p className="font-medium leading-[22px] text-lg text-white">Recommended for Your Stay</p>
             </div>
+
             <div className="flex justify-between  items-start relative mx-5  mt-2">
               <div className="overflow-x-auto">
                 <div className="space-x-4">
@@ -267,132 +264,141 @@ function PreCheckInPage(propertyInfo: any) {
             setShowCheckoutModal={setShowCheckoutModal}
           />
         )}
-
-
-        {/* <HeroSection
-          photoUrl={propertyInfo?.propertyInfo?.thumbnailUrl}
-          propertyName={propertyInfo?.propertyInfo?.name}
-        /> */}
-        {/* <div className="flex flex-col px-3 sm:px-[30%]">
-          <div className="flex flex-col gap-3 sm:gap-4">
-            <div className="flex gap-2.5 sm:gap-3.5 items-center">
-              <div className="bg-white/[.12] rounded-md sm:rounded-xl h-12 w-12 sm:h-16 sm:w-16">
-                <LocationIcon width={screenSize === 'xs' ? 48 : 74} height={screenSize === 'xs' ? 48 : 74} />
-              </div>
-              <div className="flex flex-col self-center">
-                <div className="text-lg sm:text-2xl leading-9">
-                  {propertyInfo?.propertyInfo?.city}
-                </div>
-                <div className="text-sm sm:text-lg">
-                  {propertyInfo?.propertyInfo?.address}
-                </div>
-              </div>
+      </div >
+      
+      {/* 
+      <HeroSection
+        photoUrl={propertyInfo?.propertyInfo?.thumbnailUrl}
+        propertyName={propertyInfo?.propertyInfo?.name}
+      />
+      <div className="flex flex-col px-3 sm:px-[30%]">
+        <div className="flex flex-col gap-3 sm:gap-4">
+          <div className="flex gap-2.5 sm:gap-3.5 items-center">
+            <div className="bg-white/[.12] rounded-md sm:rounded-xl h-12 w-12 sm:h-16 sm:w-16">
+              <LocationIcon width={screenSize === 'xs' ? 48 : 74} height={screenSize === 'xs' ? 48 : 74} />
             </div>
-            <div className="flex gap-2.5 sm:gap-3.5 items-center">
-              <div className="bg-white/[.12] rounded-md sm:rounded-xl h-12 w-12 sm:h-16 sm:w-16">
-                <PhoneIcon width={screenSize === 'xs' ? 48 : 74} height={screenSize === 'xs' ? 48 : 74} />
+            <div className="flex flex-col self-center">
+              <div className="text-lg sm:text-2xl leading-9">
+                {propertyInfo?.propertyInfo?.city}
               </div>
-              <div className="self-center text-lg sm:text-2xl leading-9">
-                {propertyInfo?.propertyInfo?.contactPhone1 != null
-                  ? propertyInfo?.propertyInfo?.contactPhone1
-                  : "No number info"}
-              </div>
-            </div>
-            <div className="flex gap-2.5 sm:gap-3.5 items-center">
-              <div className="bg-white/[.12] rounded-md sm:rounded-xl h-12 w-12 sm:h-16 sm:w-16">
-                <WifiIcon width={screenSize === 'xs' ? 48 : 74} height={screenSize === 'xs' ? 48 : 74} />
-              </div>
-              <div className="flex flex-col self-center">
-                <div className="text-lg sm:text-2xl leading-9">
-                  {propertyInfo?.propertyInfo?.wifiUsername != null
-                    ? propertyInfo?.propertyInfo?.wifiUsername
-                    : "No wifi info"}
-                </div>
-                <div className="text-sm sm:text-lg">
-                  {propertyInfo?.propertyInfo?.wifiPassword}
-                </div>
+              <div className="text-sm sm:text-lg">
+                {propertyInfo?.propertyInfo?.address}
               </div>
             </div>
           </div>
-          {!reservation?.checkedIn ? (
-            <Button
-              styles={
-                "w-full bg-white text-black text-sm sm:text-lg tracking-[1px] rounded sm:rounded-md sm:rounded-1 h-10 sm:h-14 uppercase tracking-wider my-4 sm:my-6"
-              }
-              type={"button"}
-              title={"s"}
-              disabled={false}
-              onClick={openCheckInDialog}
-            >
-              Check Ins
-            </Button>
-          ) : (
-            <Button
-              styles={
-                "w-full bg-white text-black text-sm sm:text-lg tracking-[1px] rounded sm:rounded-md sm:rounded-1 h-10 sm:h-14 uppercase tracking-wider my-4 sm:my-6"
-              }
-              type={"button"}
-              title={"Check out"}
-              disabled={false}
-              onClick={openCheckOutDialog}
-            >
-              Check Out
-            </Button>
-          )}
-
-          <div className="flex flex-col gap-3 sm:gap-4">
-            <h2 className="text-lg sm:text-2xl leading-9">
-              Recommended for your stay
-            </h2>
-            <div className="flex flex-col gap-4 sm:gap-6">
-              {recommendedList?.map((item) => {
-                return (
-                  <>
-                    <Item
-                      key={item.item_name}
-                      item={item}
-                      setShowModal={setShowModal}
-                      setSelectedItem={setSelectedItem}
-                    />
-                  </>
-                )
-              })}
+          <div className="flex gap-2.5 sm:gap-3.5 items-center">
+            <div className="bg-white/[.12] rounded-md sm:rounded-xl h-12 w-12 sm:h-16 sm:w-16">
+              <PhoneIcon width={screenSize === 'xs' ? 48 : 74} height={screenSize === 'xs' ? 48 : 74} />
+            </div>
+            <div className="self-center text-lg sm:text-2xl leading-9">
+              {propertyInfo?.propertyInfo?.contactPhone1 != null
+                ? propertyInfo?.propertyInfo?.contactPhone1
+                : "No number info"}
             </div>
           </div>
-          <div className="mt-6 sm:mt-8">
-            {faqList.map(faqItem => (
-              <FAQ key={faqItem.faq_answer} faq={faqItem} />
-            ))}
-            <hr className="h-px sm:h-1 border-t-0 bg-white" />
+          <div className="flex gap-2.5 sm:gap-3.5 items-center">
+            <div className="bg-white/[.12] rounded-md sm:rounded-xl h-12 w-12 sm:h-16 sm:w-16">
+              <WifiIcon width={screenSize === 'xs' ? 48 : 74} height={screenSize === 'xs' ? 48 : 74} />
+            </div>
+            <div className="flex flex-col self-center">
+              <div className="text-lg sm:text-2xl leading-9">
+                {propertyInfo?.propertyInfo?.wifiUsername != null
+                  ? propertyInfo?.propertyInfo?.wifiUsername
+                  : "No wifi info"}
+              </div>
+              <div className="text-sm sm:text-lg">
+                {propertyInfo?.propertyInfo?.wifiPassword}
+              </div>
+            </div>
           </div>
-          <Footer />
-        </div> */}
-        {/* {showModal && (
+        </div>
+        {!reservation?.checkedIn ? (
+          <Button
+            styles={
+              "w-full bg-white text-black text-sm sm:text-lg tracking-[1px] rounded sm:rounded-md sm:rounded-1 h-10 sm:h-14 uppercase tracking-wider my-4 sm:my-6"
+            }
+            type={"button"}
+            title={"s"}
+            disabled={false}
+            onClick={openCheckInDialog}
+          >
+            Check Ins
+          </Button>
+        ) : (
+          <Button
+            styles={
+              "w-full bg-white text-black text-sm sm:text-lg tracking-[1px] rounded sm:rounded-md sm:rounded-1 h-10 sm:h-14 uppercase tracking-wider my-4 sm:my-6"
+            }
+            type={"button"}
+            title={"Check out"}
+            disabled={false}
+            onClick={openCheckOutDialog}
+          >
+            Check Out
+          </Button>
+        )}
+
+        <div className="flex flex-col gap-3 sm:gap-4">
+          <h2 className="text-lg sm:text-2xl leading-9">
+            Recommended for your stay
+          </h2>
+          <div className="flex flex-col gap-4 sm:gap-6">
+            {recommendedList?.map((item) => {
+              return (
+                <>
+                  <Item
+                    key={item.item_name}
+                    item={item}
+                    setShowModal={setShowModal}
+                    setSelectedItem={setSelectedItem}
+                  />
+                </>
+              )
+            })}
+          </div>
+        </div>
+        <div className="mt-6 sm:mt-8">
+          {faqList.map(faqItem => (
+            <FAQ key={faqItem.faq_answer} faq={faqItem} />
+          ))}
+          <hr className="h-px sm:h-1 border-t-0 bg-white" />
+        </div>
+        <Footer />
+      </div>
+      {
+        showModal && (
           <Modal
             showModal={showModal}
             setShowModal={setShowModal}
             selectedItem={selectedItem}
           />
-        )} */}
-        {/* {showCheckInModal && (
+        )
+      }
+      {
+        showCheckInModal && (
           <CheckInModal setShowCheckInModal={setShowCheckInModal}
             fetchReservation={fetchReservation} />
-        )}
-        {showEarlyCheckInModal && (
+        )
+      }
+      {
+        showEarlyCheckInModal && (
           <EarlyCheckInModal
             setShowModal={setShowModal}
             setSelectedItem={setSelectedItem}
             items={recommendedList}
             setShowEarlyCheckInModal={setShowEarlyCheckInModal}
           />
-        )}
-        {showCheckOutModal && (
+        )
+      }
+      {
+        showCheckOutModal && (
           <CheckOutModal
             showCheckOutModal={showCheckOutModal}
             setShowCheckoutModal={setShowCheckoutModal}
           />
-        )} */}
-      </div>
+        )
+      } */}
+
     </>
   );
 }
