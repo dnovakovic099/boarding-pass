@@ -9,7 +9,7 @@ const PostStayPage = (propertyInfo: any) => {
   console.log(propertyInfo?.propertyInfo)
 
   return (
-    <div className="flex  flex-col w-full text-white ">
+    <div className="flex  max-w-sm flex-col w-full text-white ">
       <HeroSection
         photoUrl={propertyInfo?.propertyInfo?.thumbnailUrl}
         propertyName={''}
