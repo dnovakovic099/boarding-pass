@@ -107,7 +107,7 @@ const LandingPage = () => {
                 </div>
                 <div >
                   <input
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
                     onChange={handleChange}
@@ -131,8 +131,8 @@ const LandingPage = () => {
                     />
                   </label>
                 </div>
-              </div>
-              <div className="mt-5">
+              </div> 
+              <div className="mt-2">
                 <p className=" text-center text-sm text-white">
                   By clicking submit, you agree to our ?
                   <a href="#" className="font-semibold leading-6 space-x-0 underline  border-l-indigo-500 text-white">Privacy Policy</a>
